@@ -13,7 +13,7 @@ SD1.5 consists of the following parts:
 2) **Text encoder** - makes prompt embeddings
 3) **Diffusional model** - UNet that generates latents from text embeddings
 
-We demonstrate 3 slightly different approaches to tuning the diffusional model:
+Diffusional model is a UNet that predicts noise in a noisy image. Sampling process consists of generating initial noise and then gradually removing it in many steps by using the model prediction as a direction to follow in latent space.  We demonstrate 3 slightly different approaches to tuning the diffusional model:
 1) **Consistency training** - teaching the model to make larger steps along the diffusional denoising trajectory by calculating loss between results (one-step-denoised images) before and after the large step.
 2) **Consistency distillation** - same as above, but with using a "teacher" model with classifier-free guidance to make that large step.
 3) **Multi-boundary consistency distillation** - same as above, but with results being images denoised to the nearest boundary instead of completely denoised. So here we make same steps as above, but calculate loss at closer points along the denoising trajectory.
