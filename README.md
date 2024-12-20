@@ -7,7 +7,7 @@ We tune the model and end up with very nice results at 4 stepts: ![Multi-boundar
 
 Our final 4 step model produces nice images for other prompts too: ![Multi-boundary consistensy distillation samples for other prompts](result_images/MBCD_other_prompts.jpg) 
 
-
+## How do we achieve that:
 SD1.5 consists of the following parts:
 1) **VAE** - converts $3{\times}512{\times}512$ images into $4{\times}64{\times}64$ latents and back.
 2) **Text encoder** - makes prompt embeddings
